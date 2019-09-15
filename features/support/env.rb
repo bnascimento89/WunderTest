@@ -9,4 +9,4 @@ require 'json-schema'
 require 'rspec'
 require 'rspec/expectations'
 
-DATA_MAGIC_DIRECTORY = 'features/support/data'
+DATA_MAGIC_DIRECTORY = 'features/support/data'.freeze
