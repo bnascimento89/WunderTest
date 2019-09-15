@@ -17,6 +17,22 @@
      $ bundle install
       
 ## Usage
- - run: 
+ - To run all scenarios
      
        $ cucumber
+       
+  - To run create employee scenario
+     
+       $ cucumber -t @create_employee
+       
+  - To run validate the employee was created
+     
+       $ cucumber -t @validate_created_employee
+  
+  - To run validate delete created employee
+     
+       $ cucumber -t @delete_created_employee
+  
+  
+  
+     
