@@ -21,19 +21,24 @@ Given('I create an employee') do
   expect(last_response.code).to eq 200
 end
 
-Given('send the employee id to employee endpoint') do
-  get_employee_url = base_employee_url + 'employee/' + get_value(id)
-  get
+And('send the employee id to employee endpoint') do
+  get_created_employee
 end
 
 Then('I should see the created employee') do
-  pending # Write code here that turns the phrase above into concrete actions
+  employeeSchema = EmployeeSchema.new
+  schema = employeeSchema.get_schema
+  expect(last_response.code).to eq 200
+  expect(validate_schema(schema)).to be true
 end
 
 Given('send the employee id to delete endpoint') do
-  pending # Write code here that turns the phrase above into concrete actions
+  delete_created_employee
 end
 
 Then('the employee should be deleted') do
-  pending # Write code here that turns the phrase above into concrete actions
+  employeeSchema = EmployeeSchema.new
+  schema = employeeSchema.delete_schema
+  expect(last_response.code).to eq 200
+  expect(validate_schema(schema)).to be true
 end

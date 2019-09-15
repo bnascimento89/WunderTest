@@ -82,4 +82,35 @@ class EmployeeSchema
       }
     }
   end
+  
+  def delete_schema
+    {
+      "type": "object",
+      "title": "The delete Schema",
+      "required": [
+        "success"
+      ],
+      "properties": {
+        "success": {
+          "$id": "#/properties/success",
+          "type": "object",
+          "title": "The Success Schema",
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "$id": "#/properties/success/properties/text",
+              "type": "string",
+              "enum": [
+                "successfully! deleted Records"
+              ],
+              "title": "The Text Schema",
+              "default": "",
+            }
+          }
+        }
+      }
+    }
+  end
 end
