@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'byebug'
+gem 'cucumber'
+gem 'data_magic'
+gem 'httparty'
+gem 'json'
+gem 'json-schema'
+gem 'jsonpath'
+gem 'rspec'
