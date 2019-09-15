@@ -71,6 +71,7 @@ DEPENDENCIES
   byebug
   cucumber
   data_magic
+  faker
   httparty
   json
   json-schema

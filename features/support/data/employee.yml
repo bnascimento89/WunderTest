@@ -1,0 +1,4 @@
+employee: &default
+  name: ~full_name
+  salary: ~randomize(1000..5000)
+  age: ~randomize(18..99)
