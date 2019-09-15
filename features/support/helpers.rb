@@ -4,7 +4,7 @@ module Helpers
     "http://dummy.restapiexample.com/api/v1/"
   end
 
-  def get(url:)
+  def get(url)
     begin
       @response = HTTParty.get url
     rescue HTTParty::ExceptionWithResponse => ex
@@ -15,15 +15,15 @@ module Helpers
     @response
   end
 
-  def post (url:, body:)
-    @response = HTTParty.post(url, :headers => {'content-type': 'application/json'}, :body => body.to_json)
+  def post(url, body)
+    begin
+      @response = HTTParty.post(url, :headers => {'content-type': 'application/json'}, :body => body.to_json)
     rescue HTTParty::ExceptionWithResponse => ex
       @response = ex.response
     end
     puts "\n POST Request=> URL:#{url}\n\n POST Response:\n Code:#{@response.code}
                          \n Body:#{@response.body}\n"
     @response
-  end
   end
 
   def last_response
@@ -38,10 +38,16 @@ module Helpers
     JSON.parse(@response.body, symbolize_names: true)[:"#{field}"]
   end
 
+  def create_employee (payload)
+    create_employee_url = base_employee_url + 'create'
+    post(create_employee_url, @payload)
+  end
+
   def show_value(field)
     puts "The value of the field #{field} is
           #{JSON.parse(@response.body, symbolize_names: true)[:"#{field}"]}"
   end
+
 end
 
 DataMagic.add_translator Helpers

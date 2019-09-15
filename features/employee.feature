@@ -1,7 +1,8 @@
 # language: en
 # encoding: utf-8
 
-Feature: Employee Management
+Feature: Employee 
+  @create
   Scenario: Creating an employee
     Given I want to create an employee
     And send the employee information to create endpoint

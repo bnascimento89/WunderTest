@@ -9,9 +9,4 @@ require 'json-schema'
 require 'rspec'
 require 'rspec/expectations'
 
-require 'support/helpers'
-require 'model/employee'
-
-include Helpers
-
-DATA_MAGIC_DIRECTORY = '../support/data'
+DATA_MAGIC_DIRECTORY = 'features/support/data'

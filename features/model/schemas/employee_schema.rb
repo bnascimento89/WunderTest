@@ -43,4 +43,43 @@ class EmployeeSchema
       }
     }
   end
+
+  def create_schema
+    {
+      "type": "object",
+      "title": "The created Schema",
+      "required": [
+        "name",
+        "salary",
+        "age",
+        "id"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "pattern": "^(.*)$"
+        },
+        "salary": {
+          "$id": "#/properties/salary",
+          "type": "string",
+          "title": "The Salary Schema",
+          "pattern": "^(.*)$"
+        },
+        "age": {
+          "$id": "#/properties/age",
+          "type": "string",
+          "title": "The Age Schema",
+          "pattern": "^(.*)$"
+        },
+        "id": {
+          "$id": "#/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  end
 end
